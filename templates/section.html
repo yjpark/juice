@@ -11,6 +11,6 @@
 
 {% block content %}
 <div class="heading-text">{{ section.description }}</div>
-{{ macros::render_section_header() }}
 {{ section.content | safe }}
+{{ macros::render_section_links() }}
 {% endblock content %}
