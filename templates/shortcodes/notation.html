@@ -1,0 +1,24 @@
+<div {% if class %}class="{{class}}"{% endif %}>
+{% if id %}
+    {% set iframe_id = "iframe_{{id}}" %}
+    {% set toggle_id = "toggle_{{id}}" %}
+{% else %}
+    {% set iframe_id = "iframe_notation" %}
+    {% set toggle_id = "toggle_{{id}}" %}
+{% endif %}
+    <button
+        id="{{toggle_id}}"
+        class="toggle_normal"
+        onclick="toggle_notation('{{iframe_id}}', '{{toggle_id}}')"
+    >
+        <i class="fa fa-compress-arrows-alt"></i>
+    </button>
+    <iframe
+        id="{{iframe_id}}"
+        src="/notation/viewer.html?{{tab}}"
+        class="iframe_normal"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+</div>

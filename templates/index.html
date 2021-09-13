@@ -4,13 +4,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <!-- yjpark changes begin
+    <title>{% block title_ %}{{ config.title }}{% endblock title_ %}</title>
+    -->
+    <title>{% block title %}{{ trans(key="title",lang=lang) }}{% endblock title %}</title>
+    <!-- yjpark changes end -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% include "_variables.html" %}
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="{{ get_url(path="juice.css") }}">
+    <!-- yjpark changes begin -->
+    <meta name="application-name" content="{{ trans(key="title",lang=lang) }}">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="{{ get_url(path="yjpark.css") }}">
+    <script src="/ext/fa/js/fontawesome.min.js"></script>
+    <link rel="stylesheet" href="/ext/fa/css/all.min.css">
+    <script>
+    function toggle_notation(iframe_id, toggle_id) {
+        var iframe = document.getElementById(iframe_id);
+        var toggle = document.getElementById(toggle_id);
+        if (iframe.className == "iframe_normal") {
+            iframe.className = "iframe_fullscreen";
+            toggle.className = "toggle_fullscreen";
+        } else {
+            iframe.className = "iframe_normal";
+            toggle.className = "toggle_normal";
+        }
+    }
+    </script>
+    <!-- yjpark changes end -->
     {% block head %}
     {% endblock head %}
 </head>
@@ -27,23 +54,44 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <section class="text-center">
             <h1 class="heading-text" style="font-size: 50px">
+                <!-- yjpark changes begin
                 Build your static website
+                -->
+                {{ trans(key="slogan",lang=lang) }}
+                <!-- yjpark changes end -->
             </h1>
             <h3 class="title-text">
+                <!-- yjpark changes begin
                 <b>Juice</b> is an intuitive, elegant, and lightweight Zola theme for product websites.
+                -->
+                {{ trans(key="slogan2",lang=lang) }}
+                <!-- yjpark changes end -->
             </h3>
             <div>
+                <!-- yjpark changes begin
                 <a class="github-button" href="https://github.com/huhu/juice" data-size="large" data-show-count="true"
-                   aria-label="Star huhu/juice on GitHub">Star</a>
+                    aria-label="Star huhu/juice on GitHub">Star</a>
                 <a class="github-button" href="https://github.com/huhu/juice/fork" data-size="large"
-                   data-show-count="true" aria-label="Fork huhu/juice on GitHub">Fork</a>
+                    data-show-count="true" aria-label="Fork huhu/juice on GitHub">Fork</a>
+                -->
+                {% block hero_links %}
+                {% endblock hero_links %}
+                <!-- yjpark changes end -->
             </div>
         </section>
+        <!-- yjpark changes begin
         <img class="hero-image" style="width: 50%" src="{{ get_url(path="juice.svg") }}">
+        -->
+        <img class="hero-image" style="width: 50%" src="{{ get_url(path=config.extra.juice_hero_path) }}">
+        <!-- yjpark changes end -->
 
         <div class="explore-more text"
             onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+            <!-- yjpark changes begin
             Explore More ⇩
+            -->
+            {{ trans(key="explore_more",lang=lang) }}
+            <!-- yjpark changes end -->
         </div>
         <style>
             .hero section {
@@ -105,7 +153,11 @@
     {% block footer %}
     <footer>
         <small class="subtext">
+            <!-- yjpark changes begin
             <a href="https://huhu.io">Huhu.io</a> © 2021
+            -->
+            {{ trans(key="footer",lang=lang) }}
+            <!-- yjpark changes end -->
         </small>
     </footer>
     {% endblock footer %}
