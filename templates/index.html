@@ -145,7 +145,11 @@
 
         <div class="content text">
             {% block content %}
+            <!-- yjpark changes begin
             <div id="features" class="heading-text">Overview</div>
+            -->
+            <div id="features" class="heading-text">{{ trans(key="overview",lang=lang) }}</div>
+            <!-- yjpark changes end -->
             {{ section.content | safe }}
             {% endblock content %}
         </div>
