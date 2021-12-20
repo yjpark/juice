@@ -1,27 +1,21 @@
 {% macro render_header() %}
-<!-- yjpark changes begin
-{% set section = get_section(path="_index.md") %}
--->
 {% if lang == config.extra.default_language %}
     {% set section = get_section(path="_index.md") %}
 {% else %}
     {% set section = get_section(path="_index." ~ lang ~ ".md") %}
 {% endif %}
-<!-- yjpark changes end -->
 <a href="{{ section.permalink }}">
     <div class="logo">
-        <img src="{{ get_url(path=config.extra.juice_logo_path) }}" alt="logo">
+        <img src="{{ get_url(path=config.extra.juice_logo_path, cachebust=true) }}" alt="logo">
         {{ config.extra.juice_logo_name }}
     </div>
 </a>
 
 <nav>
-    <!-- yjpark changes begin -->
     {% for _subsection in section.subsections %}
         {% set subsection = get_section(path=_subsection) %}
     <a class="nav-item subtitle-text" href="{{ subsection.permalink }}">{{ subsection.title }}</a>
     {% endfor %}
-    <!-- yjpark changes end -->
     {% for page in section.pages %}
     <a class="nav-item subtitle-text" href="{{ page.permalink }}">{{ page.title }}</a>
     {% endfor %}
@@ -33,7 +27,6 @@
 </nav>
 {% endmacro render_header %}
 
-<!-- yjpark changes begin -->
 {% macro render_section_links() %}
 <nav>
     {% for _subsection in section.subsections %}
@@ -45,4 +38,3 @@
     {% endfor %}
 </nav>
 {% endmacro render_section_links %}
-<!-- yjpark changes end -->
