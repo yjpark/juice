@@ -26,3 +26,4 @@ juice_extra_menu = [
 ]
 repository_url = "https://github.com/yjpark/juice"
 notation_url = "https://www.notation.fun/notation"
+notation_kb_url = "https://www.notation.fun/notation_kb"
