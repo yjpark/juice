@@ -1,11 +1,18 @@
 {% if target %}
-    {% set a_target = "{{ target }}" %}
+    {% set a_target = target %}
 {% else %}
-    {% set a_target = "_tab" %}
+    {% set a_target = "_blank" %}
+{% endif %}
+
+{% if text %}
+    {% set a_text = text %}
+{% else %}
+    {% set a_text = config.extra.tab_card_text %}
 {% endif %}
 
 <div class="tab_card">
-<a target="{{ a_target }}" href="{{ config.extra.notation_url }}/viewer.html?{{tab}}">{{ text }}
+<a target="{{ a_target }}" href="{{ config.extra.notation_url }}/viewer.html?{{tab}}">
+    <span>{{ a_text }}</span>
+    <img src="/images/tab.png" />
 </a>
-<img src="/images/tab.png" />
 </div>
