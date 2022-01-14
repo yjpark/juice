@@ -1,0 +1,11 @@
+{% if target %}
+    {% set a_target = "{{ target }}" %}
+{% else %}
+    {% set a_target = "_tab" %}
+{% endif %}
+
+<div class="tab_card">
+<a target="{{ a_target }}" href="{{ config.extra.notation_url }}/viewer.html?{{tab}}">{{ text }}
+</a>
+<img src="/images/tab.png" />
+</div>

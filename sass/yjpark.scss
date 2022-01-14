@@ -28,3 +28,23 @@
 th {
   text-align: left;
 }
+
+.tab_card {
+  height: 80px;
+  background-color: #FFF9F2;
+}
+
+.tab_card img {
+  padding: 8px;
+  width: 64px;
+  height: 64px;
+  float: right;
+}
+
+.tab_card a {
+  line-height: 64px;
+  padding: 8px;
+  display: inline-block;
+  width: calc(100% - 96px);
+  text-align: center;
+}
