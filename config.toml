@@ -25,6 +25,6 @@ juice_extra_menu = [
     { title = "Github", link = "https://github.com/yjpark/juice" }
 ]
 repository_url = "https://github.com/yjpark/juice"
-notation_url = "https://www.notation.fun/notation"
-notation_kb_url = "https://www.notation.fun/notation_kb"
+notation_url = "https://www.notation.fun/notation/viewer.html?lang=en-US&tab="
+notation_kb_url = "https://www.notation.fun/notation_kb/kb.html?lang=en-US&page="
 tab_card_text = "Click to open the tab"
