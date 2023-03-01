@@ -1,0 +1,10 @@
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<div class="github_star">
+  <a class="github-button" href="https://github.com/{{repo}}" data-size="large" data-show-count="true"
+    aria-label="Star {{repo}} on GitHub">Star</a>
+{% if hide_fork %}
+{% else %}
+  <a class="github-button" href="https://github.com/{{repo}}/fork" data-size="large"
+    data-show-count="true" aria-label="Fork {{repo}} on GitHub">Fork</a>
+{% endif %}
+</div>
